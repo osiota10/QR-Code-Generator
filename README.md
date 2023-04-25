@@ -31,3 +31,6 @@ You can also switch between the `light and dark themes` by clicking the toggle b
 
 ## Contributing
 If you would like to contribute to the QR Code Generator, please open an issue or submit a pull request
+
+## Preview
+You can view the live project at: [https://osiota10.github.io/QR-Code-Generator/](https://osiota10.github.io/QR-Code-Generator/)
