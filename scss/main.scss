@@ -1,0 +1,150 @@
+@import './spacing';
+@import './typography';
+@import './buttons';
+@import './theme';
+@import './input';
+@import './media-queries';
+
+
+
+%justify-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+* { 
+    margin: 0; 
+    padding: 0; 
+}
+html{
+    font-size: 18px;
+}
+
+
+body {
+    @include generate(p, padding);
+    @include generate(pt, padding-top);
+    @include generate(pb, padding-bottom);
+    @include generate(mt, margin-top);
+    @include generate(mb, margin-bottom);
+    @include generate(me, margin-right);
+    @include generate(ms, margin-left);
+    text-align: center;
+}
+
+main{
+    @extend %justify-center;
+    -webkit-perspective: 150rem;
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+}
+
+.container{
+    min-width: 484px;
+    max-width: 600px;
+    width: 50%;
+    border-radius: 1rem;
+
+    -webkit-transition: all 0.8s ease;
+    transition: all 0.8s ease;
+    position: absolute;
+    top: 5rem;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow: hidden;
+    -webkit-box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+
+    img {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .input {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+  
+.container-front.flipped {
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+}
+
+.container-back {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.container-back.flipped {
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0);
+}
+
+
+.color{
+    display: flex;
+    justify-content: space-around;
+}
+
+.img-format{
+    display: flex;
+    justify-content: space-between;
+
+    label{
+        display: inline-flex;
+        margin: auto;
+    }
+}
+
+
+
+
+
+// Define the toggle button styles
+.theme-container{
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .theme-toggle {
+        width: 3rem;
+        height: 1.5rem;
+        border-radius: 1rem;
+        padding: 2px;
+        cursor: pointer;
+        transition: background-color 0.2s ease-in-out;
+      
+        &::before {
+          content: '';
+          display: block;
+          width: 1.5rem;
+          height: 1.5rem;
+          border-radius: 50%;
+          transition: transform 0.2s ease-in-out;
+        }
+    }
+}
+
+
+@include media-breakpoint-down('md') {
+    // Styles for small breakpoint and down...
+    
+    .container{
+        min-width: 0;
+        max-width: none;
+        width: 80%;
+    }
+    
+
+    body .p-7{
+        padding: 1rem;
+    }
+  }

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./dist/css/main.css">
+    <title>QR Code Generator</title>
+</head>
+<body id="body" class="light-theme flipped">
+    <main class="pt-8 pb-8 card">
+        <section class="container container-front p-7" id="qr-code-settings">
+            <header>
+                <h2 class="mb-0">Generate QR Code</h2>
+                <p>Enter the information below to generate QR Code</p>
+            </header>
+            <section class="mt-4">
+                <section class="input">
+                    <input type="text" name="data" id="data" placeholder="Text/URL" required>
+                    <small class="mt-1">Enter text/URL to QR Code</small>
+                </section>
+
+                <section class="color mt-3">
+                    <section class="qr-color">
+                        <h5 class="mb-1">QR Code Color</h5>
+                        <input type="color" name="qr-code-color" id="qr-code-color">
+                        <p class="hint mt-0" id="qr-color-value">#000000</p>
+                    </section>
+                    <section class="bg-color">
+                         <h5 class="mb-1">Background Color</h5>
+                         <input type="color" name="bg-color" id="bg-color">
+                         <p class="hint mt-0" id="bg-color-value">#000000</p>
+                    </section>
+                </section>
+
+                <section class="size mt-3">
+                    <h5 class="mb-0">Size</h5>
+                    <p class="hint mb-1" id="size-value">200 x 200</p>
+                    <input type="range" name="size" id="size" value="200" min="100" max="1000" step="100">
+                </section>
+
+                <section class="margin mt-3">
+                    <h5 class="mb-0">Margin</h5>
+                    <p class="hint mb-1" id="margin-value">2px</p>
+                    <input type="range" name="margin" id="margin" min="0" max="50" value="1">
+                </section>
+
+                <section class="mt-3">
+                    <h5 class="mb-1">Image Format</h5>
+                    <section class="img-format">
+                        <section class="me-2">
+                            <input type="radio" name="format" id="png" value="png">
+                            <label for="png" class="ms-1">PNG</label>
+                        </section>
+                        <section class="me-2">
+                            <input type="radio" name="format" id="gif" value="gif">
+                            <label for="gif" class="ms-1">GIF</label>
+                        </section>
+                        <section class="me-2">
+                            <input type="radio" name="format" id="jpg" value="jpg">
+                            <label for="jpg" class="ms-1">JPG</label>
+                        </section>
+                        <section class="me-2">
+                            <input type="radio" name="format" id="jpeg" value="jpeg">
+                            <label for="jpeg" class="ms-1">JPEG</label>
+                        </section>
+                        <section>
+                            <input type="radio" name="format" id="svg" value="svg">
+                            <label for="svg" class="ms-1">SVG</label>
+                        </section>
+                    </section>
+                </section>
+
+                <section class="cta mt-4">
+                    <button type="submit" class="button primary" id="submit">Generate</button>
+                </section>
+            </section>
+        </section>
+
+        <section class="container container-back p-7" id="qr-code-result">
+            <header>
+                <h2>QR Code Generated</h2>
+            </header>
+            <section>
+                <img src="" alt="qr-code" id="qr-code-image" name="qr-code">
+            </section>
+            <section class="cta mt-3">
+                <button class="button primary mb-3" id="download-btn">Download QR Code</button>
+                <button class="button secondary" id="edit">Go Back</button>
+            </section>
+        </section>
+
+        <section class="theme-container">
+            <small id="theme-label">Light Theme</small>
+            <div class="theme-toggle mt-1"></div>
+        </section>
+        
+    </main>
+
+    <script src="./index.js"></script>
+</body>
+</html>
