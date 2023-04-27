@@ -1,6 +1,6 @@
 # QR Code Generator
 
-This project is a QR code generator that uses both light and dark themes, fetch API, and is responsive. The generator can be used to quickly create a QR code for any given text or URL.
+This project is a QR code generator that uses both light and dark themes, fetch API, and is responsive. The generator can be used to quickly create a QR code for any given text or URL, QR code color, QR code background color, Size, margin, and image extension type
 
 ## Features
 
